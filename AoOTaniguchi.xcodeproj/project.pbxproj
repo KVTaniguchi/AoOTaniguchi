@@ -48,6 +48,7 @@
 		C7B63526194703F200CE94D2 /* 1402409353_Euro_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */; };
 		C7B63527194703F200CE94D2 /* 1402409325_Yen_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */; };
 		C7B63528194703F200CE94D2 /* 1402409295_currency_pound.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */; };
+		C7B6352A194705A100CE94D2 /* 1402410084_Pound_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63529194705A100CE94D2 /* 1402410084_Pound_coin.png */; };
 		C8E5CA8C242A42489DF5B1AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20637BDB33E6418596A93D63 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409353_Euro_coin.png; sourceTree = "<group>"; };
 		C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409325_Yen_coin.png; sourceTree = "<group>"; };
 		C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409295_currency_pound.png; sourceTree = "<group>"; };
+		C7B63529194705A100CE94D2 /* 1402410084_Pound_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402410084_Pound_coin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		C73378B119467FC300A33D4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7B63529194705A100CE94D2 /* 1402410084_Pound_coin.png */,
 				C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */,
 				C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */,
 				C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */,
@@ -314,6 +317,7 @@
 			files = (
 				C73378C319467FC400A33D4C /* Images.xcassets in Resources */,
 				C7B63526194703F200CE94D2 /* 1402409353_Euro_coin.png in Resources */,
+				C7B6352A194705A100CE94D2 /* 1402410084_Pound_coin.png in Resources */,
 				C7B63528194703F200CE94D2 /* 1402409295_currency_pound.png in Resources */,
 				C7B63527194703F200CE94D2 /* 1402409325_Yen_coin.png in Resources */,
 				C7B6351D1946ED7A00CE94D2 /* US24.png in Resources */,

@@ -54,20 +54,6 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self dismissKeyboard];
-}
-
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    NSLog(@"began editing");
-    return YES;
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self dismissKeyboard];
-    return YES;
-}
-
--(void)dismissKeyboard{
     if ([_dollarInputTextField isFirstResponder]) {
         [_dollarInputTextField resignFirstResponder];
         _dollarInputTextField.backgroundColor = [UIColor whiteColor];
@@ -75,7 +61,6 @@
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSLog(@"did edit");
     _brlLabel.text = @"";
     _jpyLabel.text = @"";
     _eurLabel.text = @"";
@@ -91,7 +76,6 @@
         NSString *convertedValue = [formatter stringFromNumber:tempNumber];
         [_convertedValuesText addObject:convertedValue];
         [_convertedValues addObject:tempNumber];
-        NSLog(@"converted value %@", convertedValue);
     }
     _brlLabel.text = [_convertedValuesText objectAtIndex:0];
     _jpyLabel.text = [_convertedValuesText objectAtIndex:1];;

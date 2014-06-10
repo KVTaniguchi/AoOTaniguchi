@@ -12,8 +12,4 @@
 @interface KTDataLoader : NSObject
 -(void)setUpDataLoader;
 -(void)grabRateData;
-@property (nonatomic,strong) NSNumber *pounds;
-@property (nonatomic,strong) NSNumber *yen;
-@property (nonatomic,strong) NSNumber *euros;
-@property (nonatomic,strong) NSNumber *reais;
 @end

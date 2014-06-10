@@ -10,6 +10,8 @@
 #import "KTDataLoader.h"
 #import "KTCurrencyStore.h"
 #import "KTViewController.h"
+#import <GKBarGraph.h>
+#import "GraphKit.h"
 
 @interface AoOTaniguchiTests : XCTestCase
 
@@ -29,27 +31,17 @@
     [super tearDown];
 }
 
--(void)userEnteredAnInteger{
-    
+-(void)currencyStoreReturnsANumber{
+    NSNumber *testNum = [NSNumber new];
+    testNum = [[KTCurrencyStore sharedStore]convertDollarAmount:@"1" ForDenom:@"JPY"];
+    XCTAssertTrue([testNum isKindOfClass:[NSNumber class]], @"The store should be storing NSNumbers loaded from the api");
 }
 
--(void)ukAPIResponded{
-    
+-(void)currencyStoreSavesCurrencyValue{
+    Currency *testMoney = [Currency new];
+    testMoney = [[KTCurrencyStore sharedStore]updateCurrency];
+    XCTAssertTrue(testMoney.value > 0, @"should not be nil, should have a value");
 }
-
--(void)euAPIResponded{
-    
-}
-
--(void)yenAPIResponded{
-    
-}
-
--(void)reaisAPIResponded{
-    
-}
-
-
 
 
 @end

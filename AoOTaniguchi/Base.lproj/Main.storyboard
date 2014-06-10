@@ -95,7 +95,7 @@
                                 <rect key="frame" x="58" y="210" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1402409295_currency_pound.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJR-gG-vyE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1402410084_Pound_coin.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJR-gG-vyE">
                                 <rect key="frame" x="58" y="249" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -123,9 +123,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1402409295_currency_pound.png" width="48" height="48"/>
         <image name="1402409325_Yen_coin.png" width="64" height="64"/>
         <image name="1402409353_Euro_coin.png" width="64" height="64"/>
+        <image name="1402410084_Pound_coin.png" width="64" height="64"/>
         <image name="BRA64.png" width="64" height="64"/>
         <image name="EU64.png" width="64" height="64"/>
         <image name="JP64.png" width="64" height="64"/>

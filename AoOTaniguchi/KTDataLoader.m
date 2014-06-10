@@ -23,8 +23,8 @@
 }
 
 -(void)grabRateData{
-    NSString *haha = [NSString stringWithFormat:@"http://openexchangerates.org/api/latest.json?app_id=22b73fef34ef4082b0c93441e7205e0a"];
-    NSURL *url = [NSURL URLWithString:haha];
+    NSString *api = [NSString stringWithFormat:@"http://openexchangerates.org/api/latest.json?app_id=22b73fef34ef4082b0c93441e7205e0a"];
+    NSURL *url = [NSURL URLWithString:api];
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
         NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
