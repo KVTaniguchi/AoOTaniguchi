@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor gk_cloudsColor];
     [self makeBarGraph];
+    _dollarInputTextField.delegate = self;
     _dataLoader = [KTDataLoader new];
     _convertedValues = [NSMutableArray new];
     _convertedValuesText = [NSMutableArray new];
@@ -66,12 +67,16 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     NSLog(@"did edit");
+    _brlLabel.text = @"";
+    _jpyLabel.text = @"";
+    _eurLabel.text = @"";
+    _ukLabel.text = @"";
 }
 
 -(void)updateRatesForDollar:(NSString*)amount{
     NSArray *denominations = [NSArray arrayWithObjects:@"BRL", @"JPY", @"EUR", @"GBP", nil];
     NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     for (NSString *denomination in denominations) {
         NSNumber *tempNumber = [[KTCurrencyStore sharedStore]convertDollarAmount:amount ForDenom:denomination];
         NSString *convertedValue = [formatter stringFromNumber:tempNumber];
