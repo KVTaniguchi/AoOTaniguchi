@@ -7,7 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "KTUserDollars.h"
+#import "KTDataLoader.h"
+#import "KTCurrencyStore.h"
+#import "KTViewController.h"
 
 @interface AoOTaniguchiTests : XCTestCase
 
@@ -27,9 +29,8 @@
     [super tearDown];
 }
 
--(void)userEnteredIntegerValue{
-    KTUserDollars *amount = [KTUserDollars new];
-    XCTAssertNotNil(amount, @"should not be nil");
+-(void)userEnteredAnInteger{
+    
 }
 
 -(void)ukAPIResponded{

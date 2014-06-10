@@ -54,15 +54,24 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    if ([_dollarInputTextField isFirstResponder]) {
-        [_dollarInputTextField resignFirstResponder];
-        _dollarInputTextField.backgroundColor = [UIColor whiteColor];
-    }
+    [self dismissKeyboard];
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     NSLog(@"began editing");
     return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self dismissKeyboard];
+    return YES;
+}
+
+-(void)dismissKeyboard{
+    if ([_dollarInputTextField isFirstResponder]) {
+        [_dollarInputTextField resignFirstResponder];
+        _dollarInputTextField.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{

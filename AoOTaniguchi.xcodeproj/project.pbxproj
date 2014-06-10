@@ -45,6 +45,9 @@
 		C7B635201946ED8400CE94D2 /* JP64.png in Resources */ = {isa = PBXBuildFile; fileRef = C733793F19469ADB00A33D4C /* JP64.png */; };
 		C7B635211946ED8700CE94D2 /* EU64.png in Resources */ = {isa = PBXBuildFile; fileRef = C733792F19469A0D00A33D4C /* EU64.png */; };
 		C7B635221946ED8B00CE94D2 /* UK64.png in Resources */ = {isa = PBXBuildFile; fileRef = C733793419469A9C00A33D4C /* UK64.png */; };
+		C7B63526194703F200CE94D2 /* 1402409353_Euro_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */; };
+		C7B63527194703F200CE94D2 /* 1402409325_Yen_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */; };
+		C7B63528194703F200CE94D2 /* 1402409295_currency_pound.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */; };
 		C8E5CA8C242A42489DF5B1AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20637BDB33E6418596A93D63 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		C7B635181946D38A00CE94D2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		C7B6351A1946D3C500CE94D2 /* KTCurrencyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTCurrencyStore.h; path = ../KTCurrencyStore.h; sourceTree = "<group>"; };
 		C7B6351B1946D3C500CE94D2 /* KTCurrencyStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTCurrencyStore.m; path = ../KTCurrencyStore.m; sourceTree = "<group>"; };
+		C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409353_Euro_coin.png; sourceTree = "<group>"; };
+		C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409325_Yen_coin.png; sourceTree = "<group>"; };
+		C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1402409295_currency_pound.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,9 @@
 		C73378B119467FC300A33D4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7B63523194703F200CE94D2 /* 1402409353_Euro_coin.png */,
+				C7B63524194703F200CE94D2 /* 1402409325_Yen_coin.png */,
+				C7B63525194703F200CE94D2 /* 1402409295_currency_pound.png */,
 				C733793919469AA800A33D4C /* US24.png */,
 				C733793A19469AA800A33D4C /* US64.png */,
 				C733792D19469A0D00A33D4C /* EU32.png */,
@@ -304,6 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73378C319467FC400A33D4C /* Images.xcassets in Resources */,
+				C7B63526194703F200CE94D2 /* 1402409353_Euro_coin.png in Resources */,
+				C7B63528194703F200CE94D2 /* 1402409295_currency_pound.png in Resources */,
+				C7B63527194703F200CE94D2 /* 1402409325_Yen_coin.png in Resources */,
 				C7B6351D1946ED7A00CE94D2 /* US24.png in Resources */,
 				C7B6351E1946ED7E00CE94D2 /* US64.png in Resources */,
 				C7B6351F1946ED8000CE94D2 /* BRA64.png in Resources */,
