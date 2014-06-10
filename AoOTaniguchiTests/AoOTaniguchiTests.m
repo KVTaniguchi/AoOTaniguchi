@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "KTUserDollars.h"
 
 @interface AoOTaniguchiTests : XCTestCase
 
@@ -26,9 +27,28 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void)userEnteredIntegerValue{
+    KTUserDollars *amount = [KTUserDollars new];
+    XCTAssertNotNil(amount, @"should not be nil");
 }
+
+-(void)ukAPIResponded{
+    
+}
+
+-(void)euAPIResponded{
+    
+}
+
+-(void)yenAPIResponded{
+    
+}
+
+-(void)reaisAPIResponded{
+    
+}
+
+
+
 
 @end

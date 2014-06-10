@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KTDataLoader.h"
 
-@interface KTViewController : UIViewController
-
+@interface KTViewController : UIViewController <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *eurLabel;
+@property (strong, nonatomic) IBOutlet UILabel *brlLabel;
+@property (strong, nonatomic) IBOutlet UILabel *jpyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *ukLabel;
+@property (strong, nonatomic) IBOutlet UITextField *dollarInputTextField;
+@property (strong, nonatomic) KTDataLoader *dataLoader;
 @end
