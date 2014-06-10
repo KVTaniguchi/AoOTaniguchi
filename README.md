@@ -10,4 +10,6 @@ It can then be run in the simulator or on a device.
 -features /
 
 active calculation as text is entered via Reactive Cocoa
+
 bar graphs showing relative amounts via GraphKit
+
