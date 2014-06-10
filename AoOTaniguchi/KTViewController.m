@@ -11,6 +11,8 @@
 #import "RACEXTScope.h"
 #import "Currency.h"
 #import "KTCurrencyStore.h"
+#import <GKBarGraph.h>
+#import "GraphKit.h"
 
 @interface KTViewController ()
 @end
@@ -20,7 +22,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor gk_cloudsColor];
+    [self makeBarGraph];
     _dataLoader = [KTDataLoader new];
+    _convertedValues = [NSMutableArray new];
+    _convertedValuesText = [NSMutableArray new];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [_dataLoader setUpDataLoader];
@@ -38,6 +44,14 @@
      }];
 }
 
+-(void)makeBarGraph{
+    _barGraph.dataSource = self;
+    _barGraph.barWidth = 30;
+    _barGraph.barHeight = 200;
+    _barGraph.marginBar = 50;
+    _barGraph.animationDuration = .5;
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     if ([_dollarInputTextField isFirstResponder]) {
         [_dollarInputTextField resignFirstResponder];
@@ -45,29 +59,76 @@
     }
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"began editing");
+    return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"did edit");
+}
+
 -(void)updateRatesForDollar:(NSString*)amount{
     NSArray *denominations = [NSArray arrayWithObjects:@"BRL", @"JPY", @"EUR", @"GBP", nil];
-    NSMutableArray *convertedValues = [NSMutableArray new];
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     for (NSString *denomination in denominations) {
-        [formatter setCurrencyCode:denomination];
-        [formatter setInternationalCurrencySymbol:denomination];
-        NSString *convertedValue = [formatter stringFromNumber:[[KTCurrencyStore sharedStore]convertDollarAmount:amount ForDenom:denomination]];
-        [convertedValues addObject:convertedValue];
+        NSNumber *tempNumber = [[KTCurrencyStore sharedStore]convertDollarAmount:amount ForDenom:denomination];
+        NSString *convertedValue = [formatter stringFromNumber:tempNumber];
+        [_convertedValuesText addObject:convertedValue];
+        [_convertedValues addObject:tempNumber];
         NSLog(@"converted value %@", convertedValue);
     }
-    _brlLabel.text = [convertedValues objectAtIndex:0];
-    _jpyLabel.text = [convertedValues objectAtIndex:1];;
-    _eurLabel.text = [convertedValues objectAtIndex:2];
-    _ukLabel.text = [convertedValues objectAtIndex:3];
+    _brlLabel.text = [_convertedValuesText objectAtIndex:0];
+    _jpyLabel.text = [_convertedValuesText objectAtIndex:1];;
+    _eurLabel.text = [_convertedValuesText objectAtIndex:2];
+    _ukLabel.text = [_convertedValuesText objectAtIndex:3];
+    [_barGraph draw];
+    [_convertedValuesText removeAllObjects];
+    [_convertedValues removeAllObjects];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - GKBarGraphDataSource
+
+-(NSInteger)numberOfBars{
+    return _convertedValues.count;
+}
+
+-(NSNumber*)valueForBarAtIndex:(NSInteger)index{
+    if (index == 1) {
+        NSInteger x = [[_convertedValues objectAtIndex:index] integerValue] / 10;
+        return [NSNumber numberWithInteger:x];
+    }
+    return [_convertedValues objectAtIndex:index];
+}
+
+- (UIColor *)colorForBarAtIndex:(NSInteger)index {
+    id colors = @[[UIColor gk_turquoiseColor],
+                  [UIColor gk_alizarinColor],
+                  [UIColor gk_peterRiverColor],
+                  [UIColor gk_amethystColor],
+                  ];
+    return [colors objectAtIndex:index];
+}
+
+
+- (UIColor *)colorForBarBackgroundAtIndex:(NSInteger)index {
+    return [UIColor whiteColor];
+}
+
+- (CFTimeInterval)animationDurationForBarAtIndex:(NSInteger)index {
+    CGFloat percentage = [[self valueForBarAtIndex:index] doubleValue];
+    percentage = (percentage / 100);
+    return (_barGraph.animationDuration * percentage);
+}
+
+- (NSString *)titleForBarAtIndex:(NSInteger)index {
+    return @"";
 }
 
 @end
