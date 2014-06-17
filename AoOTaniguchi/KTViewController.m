@@ -33,16 +33,12 @@
         [_dataLoader setUpDataLoader];
         [_dataLoader grabRateData];
     });
-    @weakify(self)
-    [[_dollarInputTextField.rac_textSignal filter:^BOOL(id value) {
-        NSString *text = value;
-        return text.length > 0;
-    }]
-     subscribeNext:^(id dollarAmount) {
-         @strongify(self)
-         _dollarInputTextField.backgroundColor = [UIColor colorWithRed:229.0f/255.0f green:15.0f/255.0f blue:148.0f/255.0f alpha:1.0];
-         [self updateRatesForDollar:dollarAmount];
-     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange) name:UITextFieldTextDidChangeNotification object:nil];
+}
+
+-(void)textFieldDidChange{
+    [self updateRatesForDollar:_dollarInputTextField.text];
 }
 
 -(void)makeBarGraph{
