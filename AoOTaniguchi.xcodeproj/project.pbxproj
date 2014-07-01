@@ -36,6 +36,7 @@
 		C733794619469AF700A33D4C /* BRA32.png in Resources */ = {isa = PBXBuildFile; fileRef = C733794319469AF700A33D4C /* BRA32.png */; };
 		C733794719469AF700A33D4C /* BRA48.png in Resources */ = {isa = PBXBuildFile; fileRef = C733794419469AF700A33D4C /* BRA48.png */; };
 		C733794819469AF700A33D4C /* BRA64.png in Resources */ = {isa = PBXBuildFile; fileRef = C733794519469AF700A33D4C /* BRA64.png */; };
+		C7430CB519635826005B0B99 /* KTStoreTester.m in Sources */ = {isa = PBXBuildFile; fileRef = C7430CB419635826005B0B99 /* KTStoreTester.m */; };
 		C7B635161946D2C600CE94D2 /* CurrencyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7B635141946D2C600CE94D2 /* CurrencyModel.xcdatamodeld */; };
 		C7B635191946D38A00CE94D2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B635181946D38A00CE94D2 /* Currency.m */; };
 		C7B6351C1946D3C500CE94D2 /* KTCurrencyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B6351B1946D3C500CE94D2 /* KTCurrencyStore.m */; };
@@ -100,6 +101,7 @@
 		C733794319469AF700A33D4C /* BRA32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BRA32.png; path = AoOTaniguchiTests/BRA32.png; sourceTree = SOURCE_ROOT; };
 		C733794419469AF700A33D4C /* BRA48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BRA48.png; path = AoOTaniguchiTests/BRA48.png; sourceTree = SOURCE_ROOT; };
 		C733794519469AF700A33D4C /* BRA64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BRA64.png; path = AoOTaniguchiTests/BRA64.png; sourceTree = SOURCE_ROOT; };
+		C7430CB419635826005B0B99 /* KTStoreTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTStoreTester.m; sourceTree = "<group>"; };
 		C7B635151946D2C600CE94D2 /* CurrencyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyModel.xcdatamodel; sourceTree = "<group>"; };
 		C7B635171946D38A00CE94D2 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		C7B635181946D38A00CE94D2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				C73378D519467FC400A33D4C /* AoOTaniguchiTests.m */,
+				C7430CB419635826005B0B99 /* KTStoreTester.m */,
 				C73378D019467FC400A33D4C /* Supporting Files */,
 			);
 			path = AoOTaniguchiTests;
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73378D619467FC400A33D4C /* AoOTaniguchiTests.m in Sources */,
+				C7430CB519635826005B0B99 /* KTStoreTester.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
