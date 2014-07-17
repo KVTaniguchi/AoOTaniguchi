@@ -1,4 +1,5 @@
 PODS:
+  - FBGlowLabel (0.0.1)
   - FrameAccessor (1.3.2)
   - GraphKit (1.1.0):
     - FrameAccessor (~> 1.3.2)
@@ -13,10 +14,12 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
+  - FBGlowLabel (~> 0.0)
   - GraphKit (~> 1.1)
   - ReactiveCocoa (~> 2.3)
 
 SPEC CHECKSUMS:
+  FBGlowLabel: cc3f45cd10a0a092141bedf220aef26fd30649e3
   FrameAccessor: 8bf7a2c66f86005ff9bcd1c9cbd0a3eb4970910b
   GraphKit: 14d522398f8c56650d835ce9bfefed6d12ce5a1c
   MKFoundationKit: f8a268133483c1aa686f208d3944624cc0e68dd2

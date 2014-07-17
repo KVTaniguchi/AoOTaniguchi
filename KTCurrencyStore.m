@@ -10,6 +10,7 @@
 
 @implementation KTCurrencyStore
 @synthesize context,model;
+
 +(KTCurrencyStore*)sharedStore{
     static KTCurrencyStore *sharedStore = nil;
     if (!sharedStore) {
@@ -17,7 +18,6 @@
     }
     return sharedStore;
 }
-
 
 +(id)allocWithZone:(struct _NSZone *)zone{
     return [self sharedStore];

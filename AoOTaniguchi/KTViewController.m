@@ -13,8 +13,20 @@
 #import "KTCurrencyStore.h"
 #import <GKBarGraph.h>
 #import "GraphKit.h"
+#import <FBGlowLabel/FBGlowLabel.h>
 
 @interface KTViewController ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *brasilFlagImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *jpnFlagImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *euroFlagImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *britImgView;
+@property (strong, nonatomic) IBOutlet UILabel *realLabelView;
+@property (strong, nonatomic) IBOutlet UIImageView *yenSymbolImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *euroSymbolImgView;
+@property (strong, nonatomic) IBOutlet UIImageView *poundSymbolImgView;
+@property (strong, nonatomic) IBOutlet UILabel *hugeLabel;
+
 @end
 
 @implementation KTViewController
@@ -24,7 +36,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor gk_cloudsColor];
     [self makeBarGraph];
+    [self setupLabel];
     _dollarInputTextField.delegate = self;
+    _hugeLabel.alpha = 0.0f;
     _dataLoader = [KTDataLoader new];
     _convertedValues = [NSMutableArray new];
     _convertedValuesText = [NSMutableArray new];
@@ -41,8 +55,72 @@
      subscribeNext:^(id dollarAmount) {
          @strongify(self)
          _dollarInputTextField.backgroundColor = [UIColor colorWithRed:229.0f/255.0f green:15.0f/255.0f blue:148.0f/255.0f alpha:1.0];
+         NSString *hugeString = dollarAmount;
+         if (hugeString.length > 3) {
+             [self flashy];
+         }
          [self updateRatesForDollar:dollarAmount];
      }];
+}
+
+-(void)flashy{
+    _brlLabel.alpha = 0.0f;
+    _jpyLabel.alpha = 0.0f;
+    _eurLabel.alpha = 0.0f;
+    _ukLabel.alpha = 0.0f;
+    _britImgView.alpha = 0.0f;
+    _jpnFlagImgView.alpha = 0.0f;
+    _euroFlagImgView.alpha = 0.0f;
+    _brasilFlagImgView.alpha = 0.0f;
+    self.barGraph.alpha = 0.0f;
+    _realLabelView.alpha = 0.0f;
+    _yenSymbolImgView.alpha = 0.0f;
+    _euroSymbolImgView.alpha = 0.0f;
+    _poundSymbolImgView.alpha = 0.0f;
+    [UIView animateWithDuration:0.5f animations:^{
+      //  self.view.backgroundColor = [UIColor colorWithRed:231.0f/255.0f green:0.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+        self.view.backgroundColor = [UIColor blackColor];
+        _hugeLabel.alpha = 1.0f;
+        
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:2.0f animations:^{
+            _hugeLabel.alpha = 0.0f;
+            self.view.backgroundColor = [UIColor whiteColor];
+            _brlLabel.alpha = 1.0f;
+            _jpyLabel.alpha = 1.0f;
+            _eurLabel.alpha = 1.0f;
+            _ukLabel.alpha = 1.0f;
+            _britImgView.alpha = 1.0f;
+            _jpnFlagImgView.alpha = 1.0f;
+            _euroFlagImgView.alpha = 1.0f;
+            _brasilFlagImgView.alpha = 1.0f;
+            _realLabelView.alpha = 1.0f;
+            _yenSymbolImgView.alpha = 1.0f;
+            _euroSymbolImgView.alpha = 1.0f;
+            _poundSymbolImgView.alpha = 1.0f;
+            self.barGraph.alpha = 1.0f;
+        }];
+        self.view.backgroundColor = [UIColor whiteColor];
+    }];
+}
+
+- (void)setupLabel
+{
+    CGRect hugeFrame = _hugeLabel.frame;
+    FBGlowLabel *v = [[FBGlowLabel alloc] initWithFrame:hugeFrame];
+    v.text = @"HUGE";
+    v.textAlignment = NSTextAlignmentCenter;
+    v.clipsToBounds = YES;
+    v.backgroundColor = [UIColor clearColor];
+    v.font = [UIFont fontWithName:@"Helvetica-Bold" size:66];
+    v.alpha = 1.0;
+    v.textColor = [UIColor colorWithRed:235.0f/255.0f green:39.0f/255.0f blue:220.0f/255.0f alpha:1.0];
+    v.glowSize = 10;
+    v.glowColor = UIColor.whiteColor;
+    v.innerGlowSize = 4;
+    v.innerGlowColor = [UIColor colorWithRed:231.0f/255.0f green:0.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+    self.hugeLabel = v;
+    [self.view addSubview:v];
 }
 
 -(void)makeBarGraph{
@@ -113,7 +191,6 @@
                   ];
     return [colors objectAtIndex:index];
 }
-
 
 - (UIColor *)colorForBarBackgroundAtIndex:(NSInteger)index {
     return [UIColor whiteColor];

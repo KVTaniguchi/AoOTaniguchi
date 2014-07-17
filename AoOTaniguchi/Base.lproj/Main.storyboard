@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -106,16 +106,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HUGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aik-jM-DCj">
+                                <rect key="frame" x="0.0" y="132" width="320" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="barGraph" destination="nVN-Tc-vNw" id="S4z-Bm-rLq"/>
+                        <outlet property="brasilFlagImgView" destination="r40-cm-a7Y" id="f02-gF-3fx"/>
+                        <outlet property="britImgView" destination="qZK-CY-22c" id="Qq3-HK-DzW"/>
                         <outlet property="brlLabel" destination="OUf-67-ReC" id="9Ad-E4-btE"/>
                         <outlet property="dollarInputTextField" destination="wDG-dX-sFW" id="43w-d2-NF9"/>
                         <outlet property="eurLabel" destination="Zpm-VW-Unm" id="v3b-7S-exj"/>
+                        <outlet property="euroFlagImgView" destination="3oa-xj-Seb" id="uZY-dn-5cm"/>
+                        <outlet property="euroSymbolImgView" destination="8l8-Ab-G8J" id="CXP-qy-gjf"/>
+                        <outlet property="hugeLabel" destination="Aik-jM-DCj" id="S9u-7o-Sqv"/>
+                        <outlet property="jpnFlagImgView" destination="Kqk-FC-pf1" id="Klo-Mt-KbO"/>
                         <outlet property="jpyLabel" destination="rjS-Fv-Nj4" id="4GN-sl-4fR"/>
+                        <outlet property="poundSymbolImgView" destination="IJR-gG-vyE" id="rNn-dT-SGI"/>
+                        <outlet property="realLabelView" destination="sDq-WS-pcx" id="XB1-cB-ewD"/>
                         <outlet property="ukLabel" destination="Jn7-xe-3en" id="gDw-1a-KyY"/>
+                        <outlet property="yenSymbolImgView" destination="Xkw-az-Wxb" id="pv1-T8-g99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
