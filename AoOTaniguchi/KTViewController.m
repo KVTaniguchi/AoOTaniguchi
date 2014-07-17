@@ -115,8 +115,8 @@
     v.font = [UIFont fontWithName:@"Helvetica-Bold" size:66];
     v.alpha = 1.0;
     v.textColor = [UIColor colorWithRed:235.0f/255.0f green:39.0f/255.0f blue:220.0f/255.0f alpha:1.0];
-    v.glowSize = 10;
-    v.glowColor = UIColor.whiteColor;
+    v.glowSize = 9;
+    v.glowColor = [UIColor colorWithRed:245.0f/255.0f green:168.0f/255.0f blue:239.0f/255.0f alpha:1.0];
     v.innerGlowSize = 4;
     v.innerGlowColor = [UIColor colorWithRed:231.0f/255.0f green:0.0f/255.0f blue:255.0f/255.0f alpha:1.0];
     self.hugeLabel = v;
